@@ -20,7 +20,7 @@ services:
 
   api:
     build:
-      context: ../cocktail-bar-backend
+      context: ./backend
     restart: unless-stopped
     environment:
       DB_HOST: db
@@ -38,7 +38,7 @@ services:
 
   frontend:
     build:
-      context: ../cocktail-bar-frontend
+      context: https://github.com/Spartansng/cocktail-bar-frontend.git#main
       args:
         VITE_API_URL: /api
     restart: unless-stopped
